@@ -1,0 +1,92 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template ltool_timemanagement/View dates header info template.
+
+    Example context (json):
+    {
+        "reactionurl_dislike" : "http://moodleurl/local/learningtools/ltool/timemanagement/lib.php",
+		"managementheader": 1,
+		"modalheader" : "Timemanagement for course 01",
+		"viewothersdates" : 1,
+		"enrolluserstatus" : 1,
+		"enrollusers" : 1,
+		"managedates" : 1,
+		"print" : 1,
+		"messageurl" : "http://moodleurl/message/index.php?id=2",
+		"profileurl" : "http://moodleurl/user/profile.php?id=2",
+		"managecourseurl" : "http://moodleurl/course/view.php?id=2",
+		"firstname" : "user",
+		"lastname" : "name"
+    }
+}}
+{{#managementheader}}
+<div class="time-management-header">
+	<div class="top-block{{#fulltitle}} full-title{{/fulltitle}}">
+		<h5>{{modalheader}}</h5>
+		<div class="right-block">
+            {{#viewothersdates}}
+			<div class="user-block">
+				<div class="message-block">
+					<a href="{{{messageurl}}}">
+						<i class="fa fa-envelope"></i> <span> {{#str}} sendmessage, local_learningtools{{/str}} </span>
+					</a>
+				</div>
+				<div class="profile-block">
+					<a href="{{{profileurl}}}">
+						<i class="fa fa-user"></i> <span> {{#str}} viewprofile, local_learningtools{{/str}} </span>
+					</a>
+				</div>
+			</div>
+            {{/viewothersdates}}
+
+            {{#viewothersdates}}
+			<div class="form-block">
+				{{#enrolluserstatus}}
+				<select class="user-select" id="user-select">
+					{{#enrollusers}}
+						<option value="{{id}}" {{#selected}} selected {{/selected}}> {{firstname}} {{lastname}}
+							{{^firstname}} {{username}} {{/firstname}}</option>
+					{{/enrollusers}}
+				</select>
+				{{/enrolluserstatus}}
+			</div>
+            {{/viewothersdates}}
+
+			<div class="loading-icon"></div>
+
+            {{#managedates}}
+            <div class="manage-dates-block">
+				<form action="{{{managecourseurl}}}" method="post">
+					<input type="hidden" name="course" value="{{course}}">
+					<input type="hidden" name="sesskey" value="{{sesskey}}">
+                	<button class="btn btn-primary" type="submit"> {{#str}} managedates, local_learningtools {{/str}}</button>
+				</form>
+            </div>
+            {{/managedates}}
+
+			{{#print}}
+            <div class="print-block">
+				<a href="javascript:void(0);">
+                	<i class="fa fa-print"></i> <span> {{#str}} print, local_learningtools{{/str}} </span>
+				</a>
+            </div>
+			{{/print}}
+		</div>
+	</div>
+</div>
+{{/managementheader}}

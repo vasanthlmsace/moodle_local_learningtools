@@ -1,0 +1,90 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ }}
+ {{!
+    @template ltool_timemanagement/View users dates info template.
+
+    Example context (json):
+    {
+        "reactionurl_dislike" : "http://moodleurl/local/learningtools/ltool/timemanagement/lib.php"
+    }
+ }}
+<div class="viewcourse-date-block">
+    <table class="table">
+        <thead>
+            {{#courseinfo}}
+            <tr>
+                <th scope="col"><div class="table-title"><i class="fa fa-calendar"></i> {{#str}} enrolldurationstr, local_learningtools{{/str}}</div>
+                    {{#userenrolinfo}}
+                     <p>{{#timestart}} {{#userdate}} {{timestart}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/timestart}}
+                         {{#timeend}} - {{#userdate}} {{timeend}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/timeend}}</p>
+                     {{/userenrolinfo}}
+                    </th>
+                <th scope="col"><div class="table-title"><i class="fa fa-calendar"></i> {{#str}} courseduedate, local_learningtools{{/str}}</div>
+                    <p>{{#courseduedate}} {{#userdate}} {{courseduedate}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/courseduedate}} {{^courseduedate}} -/- {{/courseduedate}}</p>
+                </th>
+                <th scope="col"><div class="table-title"><i class="fa fa-calendar"></i> {{#str}} courseprogress, local_learningtools{{/str}}  </div><p> {{courseprogress}} </p></th>
+                <th scope="col"><div class="table-title"><i class="fa fa-calendar"></i>  {{#str}} coursecompdate, local_learningtools{{/str}}  </div>
+                    <p> {{#coursecompletion}} {{#userdate}} {{coursecompletion}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/coursecompletion}}
+                        {{^coursecompletion}} -/- {{/coursecompletion}} </p>
+                </th>
+            </tr>
+            {{/courseinfo}}
+        </thead>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><i class="fa fa-calendar"></i>  {{#str}} startdate, local_learningtools{{/str}} </td>
+              <td><i class="fa fa-exclamation-triangle"></i>  {{#str}} duedate, local_learningtools{{/str}} </td>
+              <td><i class="fa fa-check"></i> {{#str}} progress, local_learningtools{{/str}}</td>
+              <td><i class="fa fa-calendar-check-o"></i> {{#str}} cmpdate, local_learningtools{{/str}}</td>
+              <td></td>
+            </tr>
+
+            {{#moddata}}
+                {{#modinfo}}
+                <tr class="{{#modsectionname}}grayout{{/modsectionname}}{{#trclass}}{{trclass}}{{/trclass}}{{#nosection}}grayout{{/nosection}}">
+                    <td> {{#modsectionname}} {{modsectionname}} {{/modsectionname}}</td>
+                    <td id="module-{{cmid}}" data-id="{{cmid}}">{{modname}}</td>
+                    <td>{{#startdate}} {{#userdate}} {{startdate}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/startdate}}</td>
+                    <td class="{{dueclass}}">
+                        {{#duedate}}
+                            {{^duetoday}}
+                                {{#userdate}} {{duedate}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}}
+                            {{/duetoday}}
+                            {{#duetoday}} {{#str}}today, local_learningtools{{/str}} {{/duetoday}}
+                        {{/duedate}}
+                    </td>
+                    <td>
+                        <ul>
+                            {{#progressinfo}}
+                            <li class="progress-info {{#statuscomplete}}completed{{/statuscomplete}}">
+                                <i class="fa fa-square"></i>
+                            </li>
+                            {{/progressinfo}}
+                        </ul>
+                    </td>
+                    <td class="text-success">{{#completeiondate}} {{#userdate}} {{completeiondate}}, {{#str}} strftimemonthnamedate, local_learningtools{{/str}} {{/userdate}} {{/completeiondate}}</td>
+                    <td> {{#url}} <a class="btn btn-primary {{#availableinfo}}disabled{{/availableinfo}}" href="{{{url}}}">{{modbuttonstr}}</a> {{/url}}</td>
+                </tr>
+                {{/modinfo}}
+            {{/moddata}}
+        </tbody>
+    </table>
+</div>

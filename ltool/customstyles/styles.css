@@ -1,0 +1,9 @@
+div#ltoolcustomstyles-editorbox .femptylabel .col-form-label {
+    max-width: 35px;
+}
+div#ltoolcustomstyles-editorbox .femptylabel .felement {
+    max-width: 93%;
+}
+#ltoolcustomstyles-editorbox form #fgroup_id_buttonar {
+    display: none;
+}

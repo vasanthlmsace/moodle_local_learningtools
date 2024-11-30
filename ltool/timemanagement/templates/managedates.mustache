@@ -1,0 +1,176 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template ltool_timemanagement/Manage dates header info template.
+
+    Example context (json):
+    {
+        "reactionurl_dislike" : "http://moodleurl/local/learningtools/ltool/timemanagement/lib.php"
+    }
+}}
+
+{{#datainfo}}
+<div class="course-detail-block">
+    <form action="{{pageurl}}" method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    {{#courseinfo}}
+                    <th colspan="2">
+                        <div class="table-header">
+                            <i class="fa fa-calendar"></i> {{#str}} exuserenrollment, local_learningtools{{/str}}
+                        </div>
+                        <input type="text" name="enrolluserdate" id="enrolluserdate" class="datepicker"
+                            data-value="{{#userdate}} {{demoenrolldate}}, {{#str}} strftimeyearmonth, local_learningtools{{/str}} {{/userdate}}"
+                            value="{{#userdate}} {{demoenrolldate}}, {{#str}} strftimeyearmonth, local_learningtools{{/str}} {{/userdate}}">
+                    </th>
+                    <th colspan="6" scope="row">
+                        <div class="table-header">
+                            <i class="fa fa-calendar"></i> {{#str}} courseduedate, local_learningtools{{/str}}
+                        </div>
+                        <select name="type-course-due-date" id="course-due-date-info">
+                            <option value="none" {{#none}} selected {{/none}}> {{#str}} none, local_learningtools{{/str}}</option>
+                            <option value="after" {{#after}} selected{{/after}}> {{#str}} after, local_learningtools{{/str}} </option>
+                            <option value="custom" {{#custom}} selected {{/custom}}> {{#str}} date, local_learningtools{{/str}}</option>
+                        </select>
+
+                        <div class="course-duedate-block">
+                            <div class="custom-date-selector {{^custom}}d-none{{/custom}}">
+                                <input type="text" name="course-custom-duedate" class="courseduedate datepicker" placeholder="yyyy/mm/dd/"
+                                id="course-custom-duedate" value="{{#duedatecustom}}{{duedatecustom}}{{/duedatecustom}}">
+                            </div>
+                            <div class="duration-date-selector {{^after}} d-none {{/after}}">
+                                <input type="text" size="5" name="course-duedate-digits"
+                                    id="course-duedate-digits" class="courseduedate"
+                                    value="{{#duedatedigits}}{{duedatedigits}}{{/duedatedigits}}">
+                                <select name="course-duedate-duration" id="course-duedate-duration" class="courseduedate">
+                                    <option value="hours" {{#hours}} selected {{/hours}} > {{#str}} hours, local_learningtools{{/str}} </option>
+                                    <option value="days" {{#days}} selected {{/days}} > {{#str}} days, local_learningtools{{/str}} </option>
+                                    <option value="months" {{#months}} selected {{/months}} > {{#str}} months, local_learningtools{{/str}} </option>
+                                    <option value="years" {{#years}} selected {{/years}}> {{#str}} years, local_learningtools{{/str}} </option>
+                                </select>
+                            </div>
+                            <div id="calculate-date">
+                                <span>
+                                    {{#enrollcaldate}} {{#userdate}} {{enrollcaldate}}, {{#str}} strftimeyearmonth, local_learningtools{{/str}} {{/userdate}} {{/enrollcaldate}}
+                                </span>
+                            </div>
+                        </div>
+                    </th>
+                    {{/courseinfo}}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="2" scope="row"></th>
+                    <td> <div class="table-header"> <i class="fa fa-calendar"></i> {{#str}} startdate, local_learningtools{{/str}} </div></td>
+                    <td><div class="table-header"><i class="fa fa-exclamation-triangle"></i> {{#str}} duedate, local_learningtools{{/str}} </div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {{#moddatastaus}}
+                    {{#moddata}}
+                    </tr>
+                        {{#modinfo}}
+                            <tr class="{{#modsectionname}}grayout{{/modsectionname}}{{#trclass}}{{trclass}}{{/trclass}}{{#nosection}}grayout{{/nosection}}">
+                                <th> {{#modsectionname}} {{modsectionname}} {{/modsectionname}}</th>
+                                <td id="module-{{cmid}}" data-id="{{cmid}}">{{modname}}</td>
+                                {{#modstartdate}}
+                                <td>
+                                    <select name="mod{{cmid}}-startdate-type" class="module-startdate" data-id={{cmid}}>
+                                        <option value="none" {{#none}} selected {{/none}}> {{#str}} none, local_learningtools{{/str}}</option>
+                                        <option value="upon" {{#upon}} selected {{/upon}}> {{#str}} uponenroll, local_learningtools{{/str}} </option>
+                                        <option value="after" {{#after}} selected {{/after}} > {{#str}} after, local_learningtools{{/str}} </option>
+                                        <option value="custom" {{#custom}} selected {{/custom}}> {{#str}} date, local_learningtools{{/str}} </option>
+                                    </select>
+                                    <div class="mod-startdates-block">
+                                        <div class="duration-date-selector {{^after}}d-none{{/after}}">
+                                            <input type="text" size="5" name="mod{{cmid}}-startdate-digits" class="startdate-duration"
+                                                value="{{#startdatedigits}}{{startdatedigits}}{{/startdatedigits}}" id="mod-startdate-digits">
+                                            <select name="mod{{cmid}}-startdate-duration" class="startdate-duration" id="mod-startdate-duration">
+                                                <option value="hours" {{#hours}} selected {{/hours}} > {{#str}} hours, local_learningtools{{/str}} </option>
+                                                <option value="days" {{#days}} selected {{/days}} > {{#str}} days, local_learningtools{{/str}} </option>
+                                                <option value="months" {{#months}} selected {{/months}} > {{#str}} months, local_learningtools{{/str}} </option>
+                                                <option value="years" {{#years}} selected {{/years}} > {{#str}} years, local_learningtools{{/str}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-date-selector {{^custom}}d-none{{/custom}}">
+                                            <input type="text" class="datepicker" name="mod{{cmid}}-custom-startdate" placeholder="yyyy/mm/dd/"
+                                                value="{{#startdatecustom}}{{startdatecustom}}{{/startdatecustom}}">
+                                        </div>
+                                        <div id="calculate-date" class="{{#none}}d-none{{/none}}{{#custom}}d-none{{/custom}}">
+                                            <span>
+                                                {{#enrollcaldate}} {{#userdate}} {{enrollcaldate}}, {{#str}} strftimeyearmonth, local_learningtools{{/str}} {{/userdate}} {{/enrollcaldate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                {{/modstartdate}}
+                                {{#modduedate}}
+                                <td>
+                                    <select name="mod{{cmid}}-duedate-type" class="module-duedate" data-id={{cmid}}
+                                    {{^completeionenabled}} disabled {{/completeionenabled}}>
+                                        <option value="none" {{#none}} selected {{/none}} > {{#str}} none, local_learningtools{{/str}} </option>
+                                        <option value="after" {{#after}} selected {{/after}}> {{#str}} after, local_learningtools{{/str}} </option>
+                                        <option value="custom" {{#custom}} selected {{/custom}} > {{#str}} date, local_learningtools{{/str}} </option>
+                                    </select>
+                                    <div class="mod-duedates-block">
+                                        <div class="duration-date-selector {{^after}}d-none{{/after}}">
+                                            <input type="text" size="5" name="mod{{cmid}}-duedate-digits" class="duedate-duration"
+                                                value="{{#duedatedigits}}{{duedatedigits}}{{/duedatedigits}}" id="mod-duedate-digits">
+                                            <select name="mod{{cmid}}-duedate-duration" class="duedate-duration" id="mod-duedate-duration">
+                                                <option value="hours" {{#hours}} selected {{/hours}} > {{#str}} hours, local_learningtools{{/str}} </option>
+                                                <option value="days" {{#days}} selected {{/days}} >  {{#str}} days, local_learningtools{{/str}} </option>
+                                                <option value="months" {{#months}} selected {{/months}} > {{#str}} months, local_learningtools{{/str}} </option>
+                                                <option value="years" {{#years}} selected {{/years}} > {{#str}} years, local_learningtools{{/str}} </option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-date-selector {{^custom}}d-none{{/custom}}">
+                                            <input type="text" name="mod{{cmid}}-custom-duedate" placeholder="yyyy/mm/dd/"
+                                            class="datepicker" value="{{#duedatecustom}}{{duedatecustom}}{{/duedatecustom}}">
+                                        </div>
+                                        <div id="calculate-date" class="{{^after}} d-none {{/after}}">
+                                            <span>
+                                                {{#enrollcaldate}} {{#userdate}} {{enrollcaldate}}, {{#str}} strftimeyearmonth, local_learningtools{{/str}} {{/userdate}} {{/enrollcaldate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                {{/modduedate}}
+                                <td>
+                                    <a href="{{{editurl}}}" class="setting-info">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </td>
+                                <td><a href="{{{url}}}" class="btn btn-primary"> {{#str}} open, local_learningtools{{/str}} </a></td>
+                            </tr>
+                        {{/modinfo}}
+                    {{/moddata}}
+                {{/moddatastaus}}
+            </tbody>
+        </table>
+        <div class="form-controller">
+            <input type="hidden" name="managementupdatedates" value="1">
+            <input type="hidden" name="sesskey" value="{{sesskey}}">
+            <input type="hidden" name="course" value="{{courseid}}">
+            <button type="submit" class="btn btn-primary" value="save"> {{#str}} saveandgen, local_learningtools{{/str}}</button>
+            <button type="submit" class="btn btn-primary" value="cancel"> {{#str}} cancel, local_learningtools{{/str}} </button>
+        </div>
+    </form>
+</div>
+{{/datainfo}}

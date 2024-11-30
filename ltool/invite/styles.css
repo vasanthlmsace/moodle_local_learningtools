@@ -1,0 +1,30 @@
+.local-learningtools .modal .modal-title {
+    width: 100%;
+}
+.local-learningtools .modal .modal-title > div#list-action-url {
+    text-align: right;
+}
+.local-learningtools .modal .modal-body #invite-users-area #inviteuser-action {
+    display: none;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer {
+    display: block;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer .inviteusers-footer {
+    text-align: right;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer .inviteusers-footer > div:first-child {
+    margin-top: 5px;
+    display: inline-block;
+    margin-right: 15px;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer .inviteusers-footer > div:first-child a {
+    text-decoration: none;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer .inviteusers-footer .inviteusers-action {
+    display: inline-block;
+    vertical-align: middle;
+}
+.local-learningtools .modal-dialog-scrollable .modal-footer .inviteusers-footer .inviteusers-action button + button {
+    margin-left: 10px;
+}

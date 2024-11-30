@@ -1,0 +1,381 @@
+/* Time management */
+.learningtools-action-info .floating-button > div > div.ltooltimemanagement-info button span {
+    background-color: #f00;
+}
+.local-learningtools .course-detail-block form .form-controller {
+    text-align: center;
+}
+.local-learningtools .course-detail-block form table thead tr {
+    border: 2px solid #eee;
+}
+.local-learningtools .course-detail-block form table thead tr th {
+    font-weight: normal;
+    text-align: center;
+    border: 0;
+}
+.local-learningtools .course-detail-block form table tr .custom-date-selector {
+    display: inline-block;
+    vertical-align: middle;
+}
+.local-learningtools .course-detail-block form table thead tr th .table-header {
+    display: inline-block;
+    margin-right: 5px;
+}
+.local-learningtools .course-detail-block form table tr th .course-duedate-block,
+.local-learningtools .course-detail-block form table tr .duration-date-selector,
+.local-learningtools .course-detail-block form table tr #calculate-date {
+    display: inline-block;
+}
+.local-learningtools .course-detail-block form table tr #calculate-date {
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+}
+.local-learningtools .course-detail-block form table tr th input[type="text"],
+.local-learningtools .course-detail-block form table tr th select,
+.local-learningtools .course-detail-block form table tr td input[type="text"],
+.local-learningtools .course-detail-block form table tr td select {
+    height: 30px;
+    font-size: 14px;
+    padding: 0 5px;
+    border: 1px solid #999;
+    vertical-align: middle;
+    outline: none;
+}
+.local-learningtools .course-detail-block form table tr td select {
+    max-width: 100px;
+    margin-right: 5px;
+}
+.local-learningtools .course-detail-block form table tr .duration-date-selector select {
+    margin-left: -5px;
+}
+.local-learningtools .course-detail-block form table tbody tr:first-child td .table-header {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+}
+.local-learningtools .course-detail-block form table thead tr th select {
+    margin-left: 5px;
+}
+.local-learningtools .course-detail-block form table tbody tr th,
+.local-learningtools .course-detail-block form table tbody tr td {
+    border: 0;
+}
+.local-learningtools .course-detail-block form table tbody tr.grayout td {
+    background: #fafafa;
+}
+.local-learningtools .course-detail-block form table tbody tr.white-block td {
+    background: #fff;
+}
+.local-learningtools .course-detail-block form table tbody tr.gray-block td {
+    background: #fafafa;
+}
+.local-learningtools .course-detail-block form table tbody tr th + td {
+    font-weight: 500;
+}
+.local-learningtools .course-detail-block form table tbody tr td .mod-startdates-block,
+.local-learningtools .course-detail-block form table tbody tr td .mod-duedates-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+.local-learningtools .course-detail-block form table tbody tr td:nth-child(5) {
+    text-align: right;
+}
+.local-learningtools .course-detail-block form table tbody tr td a.setting-info {
+    color: #000;
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+.local-learningtools .course-detail-block form table tbody tr td:last-child a {
+    width: 100%;
+    color: #333;
+    background: #d9dadc;
+    border-color: #d9dadc;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block {
+    display: inline-block;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block.full-title {
+    text-align: left;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block.full-title .right-block {
+    margin-top: 0;
+    float: right;
+}
+.timemanagment-modal .modal-content .modal-header .close {
+    padding: 0;
+    margin: 5px 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header {
+    height: 100%;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block {
+    height: 100%;
+    text-align: right;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .user-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .user-block .message-block,
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .user-block .profile-block {
+    display: inline-block;
+    margin-right: 5px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .loading-icon {
+    display: inline-block;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .user-block .message-block a,
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .user-block .profile-block a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .form-block {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .form-block select {
+    max-width: 250px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .manage-dates-block {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .manage-dates-block form button {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background: #d9dadc;
+    border-color: #d9dadc;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .print-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block.full-title .right-block .print-block {
+    line-height: 14px;
+    margin-top: -5px;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block .right-block .print-block a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    box-shadow: none;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block h5 {
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+.timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+.top-block.full-title h5 {
+    width: 90%;
+    text-align: left;
+    display: inline-block;
+    float: none;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr td {
+    background: none;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr:first-child td {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr:first-child td:nth-child(3) {
+    width: 14%;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr:first-child td:nth-child(4) {
+    width: 13%;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr:first-child td {
+    background: none;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr.grayout td {
+    background: #f9f9f9;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr.white-block td {
+    background: #fff;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr.gray-block td {
+    background: #f9f9f9;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr th {
+    width: 25%;
+    vertical-align: middle;
+    border: 0;
+    padding: .5rem;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr th {
+    border: 0;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr td {
+    font-weight: 500;
+    vertical-align: middle;
+    border: 0;
+    padding: .5rem;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr td ul {
+    margin: 0;
+    list-style: none;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr td ul li {
+    color: #6c757d;
+    margin-right: 5px;
+    font-size: 13px;
+    float: left;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr td ul li.completed {
+    color: #29ab47;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr:first-child td:last-child {
+    text-align: left;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr td:last-child {
+    text-align: right;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr td:last-child a {
+    min-width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background: #d9dadc;
+    border-color: #d9dadc;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tr:first-child td:nth-child(5) {
+    width: 13%;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table thead th > p {
+    margin-bottom: 0;
+}
+.timemanagment-modal .modal-content .modal-body .viewcourse-date-block table thead th .table-title {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+}
+
+@media (min-width: 1367px) {
+    .timemanagment-modal .modal-lg,
+    .timemanagment-modal .modal-xl {
+        max-width: 1460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1366px) {
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+    .top-block .right-block {
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1366px) {
+    .timemanagment-modal .modal-lg,
+    .timemanagment-modal .modal-xl {
+        max-width: 1230px;
+        margin: 1.75rem auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .timemanagment-modal .modal-lg,
+    .timemanagment-modal .modal-xl {
+        max-width: 900px;
+        margin: 1.75rem auto;
+    }
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+    .top-block .right-block .user-block .message-block a span,
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+    .top-block .right-block .user-block .profile-block a span {
+        display: none;
+    }
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header
+    .top-block .right-block .print-block a span {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block h5 {
+        width: 35%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1095px) {
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block h5 {
+        width: 26%;
+    }
+}
+
+@media (max-width: 767px) {
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block h5 {
+        width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media print {
+    #page-wrapper,
+    .d-print-block {
+        display: none;
+    }
+    .timemanagment-modal .modal-lg,
+    .timemanagment-modal .modal-xl {
+        max-width: none;
+        margin: 0;
+    }
+    .timemanagment-modal .modal-content .modal-header .modal-title .time-management-header .top-block .right-block,
+    .timemanagment-modal .modal-content .modal-header > button.close {
+        display: none;
+    }
+    .timemanagment-modal .modal-content {
+        max-height: none;
+    }
+    .timemanagment-modal .learningtools-action-info {
+        display: none;
+    }
+    .timemanagment-modal .modal-content .modal-body .viewcourse-date-block table tbody tr td:last-child a {
+        background: none;
+    }
+}
