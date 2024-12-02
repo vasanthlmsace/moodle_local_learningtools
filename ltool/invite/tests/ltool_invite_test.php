@@ -31,6 +31,42 @@ use stdClass;
 class ltool_invite_test extends \advanced_testcase {
 
     /**
+     * Summary of generator
+     * @var object
+     */
+    public $generator;
+
+    /**
+     * Summary of student
+     * @var object
+     */
+    public $student;
+
+    /**
+     * Summary of teacher
+     * @var object
+     */
+    public $teacher;
+
+    /**
+     * @var object
+     */
+    public $course;
+
+    /**
+     * Undocumented variable
+     *
+     * @var object
+     */
+    public $coursecontext;
+
+    /**
+     * Summary of useremail
+     * @var string
+     */
+    public $useremail;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void

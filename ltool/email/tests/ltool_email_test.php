@@ -31,6 +31,29 @@ use stdClass;
 class ltool_email_test extends \advanced_testcase {
 
     /**
+     * @var object
+     */
+    public $course;
+
+    /**
+     * Summary of studentrole
+     * @var object
+     */
+    public $studentrole;
+
+    /**
+     * Summary of teacherrole
+     * @var object
+     */
+    public $teacherrole;
+
+    /**
+     * Summary of coursecontext
+     * @var object
+     */
+    public $coursecontext;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void

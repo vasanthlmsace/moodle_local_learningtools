@@ -36,6 +36,19 @@ require_once($CFG->libdir. '/tablelib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class ltool_invite_table extends \table_sql {
+
+    /**
+     * Summary of courseid
+     * @var int
+     */
+    public $courseid;
+
+
+    /**
+     * @var StdClass
+     */
+    public $teacher;
+
     /**
      * Sets up the table.
      *

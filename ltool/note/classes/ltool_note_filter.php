@@ -210,7 +210,8 @@ class ltool_note_filter {
         $userparams = $usercondition['params'];
         $sql = "SELECT lnd.coursemodule, lnd.course FROM {ltool_note_data} lnd
         LEFT JOIN {course_modules} cm ON cm.id = lnd.coursemodule
-        WHERE $usersql AND cm.deletioninprogress != 0 AND lnd.course = :course AND lnd.coursemodule != 0 GROUP BY lnd.coursemodule, lnd.course";
+        WHERE $usersql AND cm.deletioninprogress != 0 AND lnd.course = :course AND lnd.coursemodule != 0
+        GROUP BY lnd.coursemodule, lnd.course";
         $params = [
             'course' => $this->selectcourse,
         ];

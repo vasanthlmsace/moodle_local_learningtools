@@ -29,6 +29,36 @@ namespace ltool_customstyles;
 class ltool_customstyles_test extends \advanced_testcase {
 
     /**
+     * Summary of user
+     * @var object
+     */
+    public $user;
+
+    /**
+     * Summary of course
+     * @var object
+     */
+    public $course;
+
+    /**
+     * Summary of teacherrole
+     * @var object
+     */
+    public $teacherrole;
+
+    /**
+     * Summary of coursecontext
+     * @var object
+     */
+    public $coursecontext;
+
+    /**
+     * Summary of parsecustomstyles
+     * @var object
+     */
+    public $parsecustomstyles;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void

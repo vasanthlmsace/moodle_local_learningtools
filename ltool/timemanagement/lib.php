@@ -685,7 +685,7 @@ function ltool_timemanagement_get_mod_userprogress_info($mod, $userid) {
                     // No need to render the activity information when there's no completion info and activity dates to show.
                     return '';
                 }
-                $activityinfo = new activity_information($cminfo, $completiondetails, $activitydates);
+                $activityinfo = new \core_course\output\activity_completion($cminfo, $completiondetails);
                 $output = $PAGE->get_renderer('core', 'course');
                 $cmprogress = $activityinfo->export_for_template($output)->completiondetails;
             } else {

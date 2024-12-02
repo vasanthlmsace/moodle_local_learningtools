@@ -47,7 +47,8 @@ Feature: Check the invite ltool workflow.
     And I click on "#ltoolinvite-info" "css_element"
     And I should see "Invite Users" in the ".modal-title" "css_element"
     And I set the field "inviteusers" to "demouser1@test.com"
-    And I press "Invite Now"
+    Then I wait "10" seconds
+    And I click on "Invite Now" "button" in the ".modal-footer" "css_element"
     And I am on "Course 1" course homepage
     And I click on enroll users page
     Then I should see "demouser1@test.com"

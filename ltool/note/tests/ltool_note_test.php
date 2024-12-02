@@ -27,6 +27,19 @@ namespace ltool_note;
  */
 class ltool_note_test extends \advanced_testcase {
 
+
+    /**
+     * Summary of context
+     * @var object
+     */
+    public $context;
+
+    /**
+     * Summary of page
+     * @var object
+     */
+    public $page;
+
     /**
      * Create custom page instance and set admin user as loggedin user.
      *

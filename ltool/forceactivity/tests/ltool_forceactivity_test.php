@@ -29,6 +29,30 @@ use stdClass;
 class ltool_forceactivity_test extends \advanced_testcase {
 
     /**
+     * Summary of course
+     * @var object
+     */
+    public $course;
+
+    /**
+     * Summary of quiz
+     * @var object
+     */
+    public $quiz;
+
+    /**
+     * Summary of cm
+     * @var object
+     */
+    public $cm;
+
+    /**
+     * Summary of context
+     * @var object
+     */
+    public $context;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void
@@ -78,4 +102,25 @@ class ltool_forceactivity_test extends \advanced_testcase {
             array('courseid' => $this->course->id));
         $this->assertEquals(1, $records);
     }
+
+    /**
+     * Adds a page activity to a course section and fills the form.
+     * Handles different Moodle branches to use the correct Behat step.
+     *
+     * @Given /^I add a page activity to course "([^"]*)" section "([^"]*)" and I fill the form with:$/
+     * @param string $coursename The name of the course
+     * @param string $sectionnumber The section number
+     * @param TableNode $table The table containing form data
+     */
+    /* public function i_add_a_page_activity_to_course_section_and_fill_the_form($coursename, $sectionnumber, TableNode $table) {
+        global $CFG;
+        if ($CFG->branch <= '403') {
+            // Use the deprecated Behat step for Moodle versions before 4.5
+            $this->execute('behat_course::i_add_a_to_section_and_i_fill_the_form_with', [$coursename, $sectionnumber, 'Page', $table]);
+        } else {
+            // Use the new Behat step for Moodle 4.5 and above
+            $this->execute('behat_course::i_add_to_course_section_and_i_fill_the_form_with', [$coursename, $sectionnumber, 'Page', $table]);
+        }
+    } */
+
 }

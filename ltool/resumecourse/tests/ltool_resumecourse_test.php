@@ -30,6 +30,29 @@ use stdClass;
  */
 class ltool_resumecourse_test extends \advanced_testcase {
 
+
+    /**
+     * @var object
+     */
+    public $generator;
+
+    /**
+     * @var object
+     */
+    public $user;
+
+    /**
+     * Summary of cm
+     * @var object
+     */
+    public $cm;
+
+    /**
+     * Summary of course
+     * @var object
+     */
+    public $course;
+
     /**
      * Create custom page instance and set admin user as loggedin user.
      *
