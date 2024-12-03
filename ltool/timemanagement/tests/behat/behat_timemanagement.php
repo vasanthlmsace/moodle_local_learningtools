@@ -70,7 +70,6 @@ class behat_timemanagement extends behat_base {
      *
      * @Given /^I set the field section in the "(?P<con_str>[^"]*)" "(?P<str>[^"]*)" to "(?P<string>[^"]*)"$/
      * @throws ElementNotFoundException Thrown by behat_base::find
-     * @param string $field
      * @param string $containerelement Element we look in
      * @param string $containerselectortype The type of selector where we look in
      * @param string $value

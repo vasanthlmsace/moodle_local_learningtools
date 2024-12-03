@@ -39,7 +39,7 @@ class behat_ltinvite extends behat_base {
     /**
      * Check that the invite event.
      *
-     * @Given /^I add learning tools page activity to course "(?P<container_string>(?:[^"]|\\")*)" section "(?P<select_string>[^"]*)"$/
+     * @Given /^I add learning tools page activity to course "(?P<cont_str>(?:[^"]|\\")*)" section "(?P<string>[^"]*)"$/
      * @param string $coursefullname
      * @param string $sectionnum
      *
@@ -48,7 +48,7 @@ class behat_ltinvite extends behat_base {
         global $CFG;
         if ($CFG->branch >= 401) {
             // Moodle-401 and above.
-            $this->execute("behat_course::i_add_to_course_section", ["Page", $coursefullname, $sectionnum]);
+            $this->execute("behat_course::i_add_to_section_using_the_activity_chooser", ["Page", $sectionnum]);
         } else {
             // Moodle-400.
             $this->execute("behat_course::i_add_to_section", ["Page", $sectionnum]);
