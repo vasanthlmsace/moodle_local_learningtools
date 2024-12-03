@@ -51,7 +51,7 @@ class behat_ltinvite extends behat_base {
             // Moodle-401 and above.
             $this->execute("behat_forms::i_add_to_course_section", ["Page", $coursefullname, $sectionnum]);
         } else {
-            // Moodle-400
+            // Moodle-400.
             $this->execute("behat_course::i_add_to_section", ["Page", $sectionnum]);
         }
         $this->execute("behat_forms::i_expand_all_fieldsets");
