@@ -32,10 +32,8 @@ Feature: Check the timemanagement visibile workflow.
       | teacher1 | C3     | editingteacher | ## today ##|
     And I log in as "teacher1"
     And I am on "Course 1" course homepage with editing mode on
-    #And I set the field "Edit topic name" in the "li#section-1" "css_element" to "Demo section 1"
-    #And I set the field "Edit topic name" in the "li#section-2" "css_element" to "Demo section 2"
-    And I set the field "Edit section name" in the "li#section-1" "css_element" to "Demo section 1"
-    And I set the field "Edit section name" in the "li#section-2" "css_element" to "Demo section 2"
+    Then I set the field section in the "li#section-1" "css_element" to "Demo section 1"
+    Then I set the field section in the "li#section-2" "css_element" to "Demo section 2"
     And I am on "Course 1" course homepage
     And I click on FAB button
     And "#ltooltimemanagement-info" "css_element" should exist

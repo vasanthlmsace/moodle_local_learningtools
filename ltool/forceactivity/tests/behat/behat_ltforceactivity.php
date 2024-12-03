@@ -39,30 +39,18 @@ class behat_ltinvite extends behat_base {
     /**
      * Check that the invite event.
      *
-     * @Given /^I add learning tools page activity to course :coursefullname section :sectionnum$/
-     * @param string $coursefullname
-     * @param string $sectionnum
+     * @Given /^I click on enroll users page$/
      *
      */
-    public function i_add_learning_tools_page_activity_to_course(string $coursefullname, string $sectionnum): void {
+    public function i_click_on_enroll_users_page(): void {
         global $CFG;
 
-        if ($CFG->branch >= 401) {
-            // Moodle-401 and above.
-            $this->execute("behat_forms::i_add_to_course_section", ["Page", $coursefullname, $sectionnum]);
+        if (round($CFG->version) < 2022031100) {
+            // Moodle-3.11 and below.
+            $this->execute("behat_navigation::i_navigate_to_in_current_page_administration", "Users > Enrolled users");
         } else {
-            // Moodle-400
-            $this->execute("behat_course::i_add_to_section", ["Page", $sectionnum]);
-        }
-        $this->execute("behat_forms::i_expand_all_fieldsets");
-        $this->execute("behat_forms::i_set_the_field_to", ["Name", "Page 1"]);
-        $this->execute("behat_forms::i_set_the_field_to", ["Description", "Test"]);
-        $this->execute("behat_forms::i_set_the_field_to", ["Page content", "Test"]);
-        if ($CFG->branch <= 403) {
-            $this->execute("behat_forms::i_set_the_field_to", ["Completion tracking", "2"]);
-        } else {
-            $this->execute("behat_forms::i_set_the_field_to", ["Page content", "Test"]);
-            $this->execute("behat_forms::i_set_the_field_to", ["Page content", "Test"]);
+            // Moodle-4.0.
+            $this->execute("behat_navigation::i_am_on_page_instance", ["Course 1", "Enrolled users"]);
         }
     }
 }

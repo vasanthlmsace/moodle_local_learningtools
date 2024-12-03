@@ -22,8 +22,7 @@ Feature: Check the Force activity ltool workflow.
     And I click on FAB button
     Then "#ltoolforceactivity-info" "css_element" should not be visible
     When I am on "Course 1" course homepage with editing mode on
-    #And I add a "Page" to section "1" and I fill the form with:
-    And I add a page activity to course "Course 1" section "1"
+    Then I add learning tools page activity to course "Course 1" section "1"
     And I expand all fieldsets
     And I set the field "Name" to "Page 1"
     And I set the field "Description" to "Test"

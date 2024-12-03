@@ -64,4 +64,24 @@ class behat_timemanagement extends behat_base {
         $text = str_replace("'", "", $text);
         $this->execute("behat_general::assert_element_contains_text", [$text, $selector, "css_element"]);
     }
+
+    /**
+     * Sets the specified value to the field.
+     *
+     * @Given /^I set the field section in the "(?P<element_container_string>(?:[^"]|\\")*)" "(?P<text_selector_string>[^"]*)" to "(?P<field_value_string>(?:[^"]|\\")*)"$/
+     * @throws ElementNotFoundException Thrown by behat_base::find
+     * @param string $field
+     * @param string $containerelement Element we look in
+     * @param string $containerselectortype The type of selector where we look in
+     * @param string $value
+     */
+    public function i_set_the_field_in_container_to($containerelement, $containerselectortype, $value) {
+        global $CFG;
+        if ($CFG->branch > 403) {
+            $this->set_field_value_in_container("Edit section name", $value, $containerselectortype, $containerelement);
+        } else {
+            $this->set_field_value_in_container("Edit topic name", $value, $containerselectortype, $containerelement);
+        }
+
+    }
 }
