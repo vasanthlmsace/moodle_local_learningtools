@@ -39,17 +39,16 @@ class behat_ltinvite extends behat_base {
     /**
      * Check that the invite event.
      *
-     * @Given /^I add learning tools page activity to course :coursefullname section :sectionnum$/
+     * @Given /^I add learning tools page activity to course "(?P<container_string>(?:[^"]|\\")*)" section "(?P<select_string>[^"]*)"$/
      * @param string $coursefullname
      * @param string $sectionnum
      *
      */
     public function i_add_learning_tools_page_activity_to_course(string $coursefullname, string $sectionnum): void {
         global $CFG;
-
         if ($CFG->branch >= 401) {
             // Moodle-401 and above.
-            $this->execute("behat_forms::i_add_to_course_section", ["Page", $coursefullname, $sectionnum]);
+            $this->execute("behat_course::i_add_to_course_section", ["Page", $coursefullname, $sectionnum]);
         } else {
             // Moodle-400.
             $this->execute("behat_course::i_add_to_section", ["Page", $sectionnum]);
@@ -61,8 +60,8 @@ class behat_ltinvite extends behat_base {
         if ($CFG->branch <= 403) {
             $this->execute("behat_forms::i_set_the_field_to", ["Completion tracking", "2"]);
         } else {
-            $this->execute("behat_forms::i_set_the_field_to", ["Page content", "Test"]);
-            $this->execute("behat_forms::i_set_the_field_to", ["Page content", "Test"]);
+            $this->execute("behat_forms::i_set_the_field_to", ["Add requirements", "1"]);
+            $this->execute("behat_forms::i_set_the_field_to", ["View the activity", "1"]);
         }
     }
 }

@@ -68,7 +68,7 @@ class behat_timemanagement extends behat_base {
     /**
      * Sets the specified value to the field.
      *
-     * @Given /^I set the field section in the "(?P<container_string>(?:[^"]|\\")*)" "(?P<select_string>[^"]*)" to "(?P<string>(?:[^"]|\\")*)"$/
+     * @Given /^I set the field section in the "(?P<con_str>[^"]*)" "(?P<str>[^"]*)" to "(?P<string>[^"]*)"$/
      * @throws ElementNotFoundException Thrown by behat_base::find
      * @param string $field
      * @param string $containerelement Element we look in
@@ -78,9 +78,11 @@ class behat_timemanagement extends behat_base {
     public function i_set_the_field_in_container_to($containerelement, $containerselectortype, $value) {
         global $CFG;
         if ($CFG->branch > 403) {
-            $this->execute("behat_forms::set_field_value_in_container", ["Edit section name", $value, $containerselectortype, $containerelement]);
+            $this->execute("behat_forms::set_field_value_in_container", ["Edit section name",
+                $value, $containerselectortype, $containerelement]);
         } else {
-            $this->execute("behat_forms::set_field_value_in_container", ["Edit topic name", $value, $containerselectortype, $containerelement]);
+            $this->execute("behat_forms::set_field_value_in_container", ["Edit topic name",
+                $value, $containerselectortype, $containerelement]);
         }
 
     }
