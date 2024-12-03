@@ -29,12 +29,12 @@ require_once(__DIR__ . '/../../../../../../lib/behat/behat_base.php');
 /**
  * Test cases custom function for invite tool.
  *
- * @package   ltool_invite
+ * @package   ltool_forceactivity
  * @category   test
  * @copyright 2021, bdecent gmbh bdecent.de
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class behat_ltinvite extends behat_base {
+class behat_ltforceactivity extends behat_base {
 
     /**
      * Check that the invite event.
