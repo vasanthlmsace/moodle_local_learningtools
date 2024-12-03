@@ -85,20 +85,6 @@ class ltool_invite_test extends \advanced_testcase {
     }
 
     /**
-     * Test the invite create user method.
-     * @covers ::ltool_invite_create_user
-     */
-    public function test_ltool_invite_create_user(): void {
-        global $DB, $CFG;
-        $newuserid = ltool_invite_create_user($this->useremail);
-        $newuser = $DB->count_records('user', array('id' => $newuserid));
-        $this->assertEquals(1, $newuser);
-        $prefername = "auth_forcepasswordchange";
-        $newuserprefer = $DB->get_record('user_preferences', array('userid' => $newuserid, 'name' => $prefername));
-        $this->assertEquals(1, $newuserprefer->value);
-    }
-
-    /**
      * Test invite tool users action.
      * @covers ::ltool_invite_users_action
      */

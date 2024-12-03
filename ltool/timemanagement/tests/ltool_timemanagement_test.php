@@ -32,6 +32,36 @@ use stdClass;
 class ltool_timemanagement_test extends \advanced_testcase {
 
     /**
+     * Summary of generator
+     * @var object
+     */
+    public $generator;
+
+    /**
+     * Summary of studentrole
+     * @var object
+     */
+    public $studentrole;
+
+    /**
+     * Summary of teacherrole
+     * @var object
+     */
+    public $teacherrole;
+
+    /**
+     * Summary of user1
+     * @var object
+     */
+    public $user1;
+
+    /**
+     * Summary of user2
+     * @var object
+     */
+    public $user2;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void

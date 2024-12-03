@@ -30,6 +30,30 @@ namespace ltool_information;
 class ltool_information_test extends \advanced_testcase {
 
     /**
+     * @var string
+     */
+    public $summary;
+
+    /**
+     * Summary of courseimg
+     * @var string
+     */
+    public $courseimg;
+
+    /**
+     * Summary of course
+     * @var object
+     */
+    public $course;
+
+    /**
+     * Summary of user
+     *
+     * @var object
+     */
+    public $user;
+
+    /**
      * Create custom page instance and set admin user as loggedin user.
      *
      * @return void
